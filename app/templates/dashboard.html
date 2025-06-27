@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center mb-4">Welcome, {{ current_user.username }}</h2>
+
+<div class="row text-center mb-4">
+  <div class="col-md-4">
+    <div class="card shadow animate__animated animate__bounceIn">
+      <div class="card-body bg-success text-white">
+        <h5>Total Income</h5>
+        <h3>₹ {{ income }}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card shadow animate__animated animate__bounceIn delay-1s">
+      <div class="card-body bg-danger text-white">
+        <h5>Total Expense</h5>
+        <h3>₹ {{ expense }}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card shadow animate__animated animate__bounceIn delay-2s">
+      <div class="card-body bg-primary text-white">
+        <h5>Balance</h5>
+        <h3>₹ {{ balance }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4 class="mt-5">Your Transactions</h4>
+<table class="table table-striped shadow-sm">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for t in transactions %}
+    <tr>
+      <td>{{ t.type }}</td>
+      <td>{{ t.category }}</td>
+      <td>₹ {{ t.amount }}</td>
+      <td>{{ t.date.strftime('%Y-%m-%d') }}</td>
+      <td>{{ t.description }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
