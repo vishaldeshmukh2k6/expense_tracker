@@ -1,6 +1,6 @@
 # 💸 Expense Tracker App
 
-A simple and user-friendly **Expense Tracker** built with **Python** and **Flask**, where users can register, log in, and track their income and expenses. This project helps you manage your personal finances efficiently with a clear dashboard and transaction history.
+A simple and user-friendly **Expense Tracker** built with **Python** and **Flask**, where users can register, log in, and track their income and expenses. This project helps you manage your personal finances efficiently with a clear dashboard and transaction history. 
 
 ---
 
